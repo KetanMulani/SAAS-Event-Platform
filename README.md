@@ -178,14 +178,3 @@ This project was built to:
 * Understand authentication & authorization deeply
 * Practice clean FastAPI project structuring
 * Prepare for internships and backend interviews
-
----
-
-## 📜 License
-
-This project is for learning and educational purposes.
-
-```
-
----
-
