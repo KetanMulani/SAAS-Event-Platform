@@ -65,13 +65,13 @@ cd event-management-api
 python -m venv venv
 ```
 
-**Windows**
+* **Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-**Linux / macOS**
+* **Linux / macOS**
 
 ```bash
 source venv/bin/activate
