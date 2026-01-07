@@ -55,8 +55,8 @@ Follow these steps to run the project locally:
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/event-management-api.git
-cd event-management-api
+git clone https://github.com/KetanMulani/SaaS-Event-Platform.git
+cd SaaS-Event-Platform
 ````
 
 ### 2️⃣ Create and activate virtual environment
