@@ -1,5 +1,5 @@
 
-# 🚀 Event Management API (FastAPI)
+# 🏢 Saas Event Platform (Multi-Tenant)
 
 A RESTful backend API built with **FastAPI** for managing events with secure user authentication and role-based access control.  
 This project demonstrates real-world backend development practices including JWT authentication, database modeling, and clean project structure.
@@ -132,14 +132,20 @@ Authorization: Bearer <your_access_token>
 
 ## 📡 API Endpoints
 
-| Method | Endpoint             | Description              | Access        |
-| ------ | -------------------- | ------------------------ | ------------- |
-| POST   | `/register`          | Register a new user      | Public        |
-| POST   | `/login`             | Login and get JWT token  | Public        |
-| GET    | `/me`                | Get current user details | Authenticated |
-| GET    | `/events`            | Get all events           | Public        |
-| POST   | `/create-event`      | Create a new event       | Authenticated |
-| DELETE | `/delete-event/{id}` | Delete event             | Admin only    |
+| Method | Endpoint                           | Description              | Access        |
+| ------ | --------------------               | ------------------------ | ------------- |
+| POST   | `/register`                        | Register a new user      | Public        |
+| POST   | `/login`                           | Login and get JWT token  | Public        |
+| GET    | `/me`                              | Get current user details | Authenticated |
+| GET    | `/events`                          | Get all events           | Public        |
+| PUT    | `/update-event/{event_id}`         | Update a event           | Admin only
+| POST   | `/create-event`                    | Create a new event       | Admin only |
+| DELETE | `/delete-event/{id}`               | Delete event             | Admin only    |
+| POST   | `/register-event/{event_id}`       | register for a event     | Public        |
+| POST   | `/events/{event_id}/announcements` | create a announcement for| Admin only    |
+|        |                                    | a specific event         |               |
+| GET    | `/events/{event_id}/announcements` | Get announcement of a    | Public        |
+|        |                                    |  specific event          |               |
 
 ---
 
