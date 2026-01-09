@@ -14,7 +14,6 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# ---------------- AUTH ---------------- #
 
 @app.post("/register")
 def register(user: UserCreate, db: Session = Depends(get_db)):
@@ -56,7 +55,6 @@ def me(current_user: User = Depends(get_current_user)):
         "role": current_user.role
     }
 
-# ---------------- EVENTS ---------------- #
 
 @app.post("/create-event")
 def create_event(
@@ -110,7 +108,6 @@ def delete_event(
     db.commit()
     return {"message": "Event deleted"}
 
-# ---------------- REGISTRATION ---------------- #
 
 @app.post("/register-event/{event_id}")
 def register_event(
@@ -158,18 +155,18 @@ def create_announcement(
     db: Session = Depends(get_db),
     admin: User = Depends(require_admin)
 ):
-    # 1️⃣ Check if event exists
+   
     event = db.query(Event).filter(Event.id == event_id).first()
     if not event:
         raise HTTPException(status_code=404, detail="Event not found")
 
-    # 2️⃣ Create announcement
+    
     new_announcement = Announcement(
         event_id=event_id,
         message=announcement.message
     )
 
-    # 3️⃣ Save to database
+    
     db.add(new_announcement)
     db.commit()
 
@@ -180,7 +177,7 @@ def get_announcement(
     event_id: int,
     db: Session = Depends(get_db),
 ):
-    # 1️⃣ Check if event exists
+
     event = db.query(Event).filter(Event.id == event_id).first()
     if not event:
         raise HTTPException(status_code=404, detail="Event not found")
